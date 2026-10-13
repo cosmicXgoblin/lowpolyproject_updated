@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// Only for the function of the title menu.
@@ -11,16 +12,37 @@ using UnityEngine.SceneManagement;
 
 public class TitleMenu : MonoBehaviour
 {
-    public void StartGame()
+    public Image fadeImage;
+
+
+    public void OnClickStartGame()
     {
         SoundEffectManager.Play("Button");
-        // #To-Do: Verzögerung!
-        SceneManager.LoadScene(1);
+        StartCoroutine(FadeToScene(3));
     }
 
-    public void QuitGame()
+    public void OnClickQuitGame()
     {
         SoundEffectManager.Play("Button");
         Application.Quit();
     }
+
+    IEnumerator FadeToScene(float duration)
+    {
+        float t = 0;
+        Color c = fadeImage.color;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            c.a = t / duration;
+            fadeImage.color = c;
+            yield return null;
+        }
+
+        SceneManager.LoadScene(1);
+    }
+
+
+
 }
