@@ -90,7 +90,7 @@ public class UiManager : MonoBehaviour
             nameQuestboard = "tutorial2";
             ok = false;
         }
-        else if (name == "tutorial2" && !ok) QuestText.text = "The Water is deadly. Do not try to swim please. Jump with SPACE.";
+        else if (name == "tutorial2" && !ok) QuestText.text = "There are no swimming animations. Do not try to swim please. Jump with SPACE.";
         else if (name == "tutorial2" && ok)
         {
             nameQuestboard = "tutorial3";
@@ -102,7 +102,7 @@ public class UiManager : MonoBehaviour
             nameQuestboard = "tutorial4";
             ok = false;
         }
-        else if (name == "tutorial4" && !ok) QuestText.text = "Please do not fall of the plattforms. You would fall endlessly.";
+        else if (name == "tutorial4" && !ok) QuestText.text = "Please do not fall of the plattforms. Only death awaits there.";
         else if (name == "tutorial4" && ok)
         {
             nameQuestboard = "tutorial5";
