@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleMenu.unity
     guid: f07b02f862834ea44924c987c99d80b1
   - enabled: 1
-    path: Assets/Scenes/lowpolyisland - scene.unity
+    path: Assets/Scenes/MainScene.unity
     guid: 963d4ea02bcbb064daeb40589a61ab45
   m_configObjects: {}

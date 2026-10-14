@@ -54,26 +54,26 @@ public class MenuManager : MonoBehaviour
         // this is for the gameOver-screen:
         // ... if we are on the first screen and left click, it will show us the second screen
         // ... and deactivate the first one. yey.
-        if (Input.GetMouseButtonDown(0) && GameOverScreen1.activeInHierarchy)
-        {
-            GameOverScreen1.SetActive(false);
-            GameOverScreen2.SetActive(true);
-        }
+        //if (Input.GetMouseButtonDown(0) && GameOverScreen1.activeInHierarchy)
+        //{
+        //    GameOverScreen1.SetActive(false);
+        //    GameOverScreen2.SetActive(true);
+        //}
            
     }
 
     // it will deactivate the pause menu and unpause the game
     public void backToGame()
     {
-        PausePanel.gameObject.SetActive(false);
         pause = false;
-        //b Debug.Log("Pausenmenü wird geschlossen");
+        PausePanel.gameObject.SetActive(false);       
+        GameOverScreen1.gameObject.SetActive(false);
     }
 
-    public void openAchievements()
-    {
-        Debug.Log("You clicked 'Achievements'. This is currently not available");
-    }
+    //public void openAchievements()
+    //{
+    //    Debug.Log("You clicked 'Achievements'. This is currently not available");
+    //}
 
     // will activate the options and deactivate the pause menu
     public void openOptions()
@@ -100,7 +100,6 @@ public class MenuManager : MonoBehaviour
         DialoguePanel.SetActive(false);
         GameOverScreen1.SetActive(true);
     }
-
 
 
 
