@@ -168,9 +168,9 @@ public class UiManager : MonoBehaviour
     {
         if (name == "dialog075" ) QuestText.text = "Tip: Talk to the pigeon again.";
         else if (name == "dialog1" ) QuestText.text = "Tip: Talk to the pigeon again.";
-        else if (name == "dialog150") QuestText.text = "Quest: 'The Die'";
+        else if (name == "dialog150") QuestText.text = "Quest 1'";
         else if (name == "dialog200") QuestText.text = "Tip: Investigate the Tree.";
-        else if (name == "dialog250") QuestText.text = "Quest: 'The Coin'";
+        else if (name == "dialog250") QuestText.text = "Quest 2";
         else if (name == "dialog250") QuestText.text = "Tip: Talk to the pigeon again.";
         //else if (name != "tutorial") QuestText.text = "ERROR 404. Somethings seems to be wrong. This is not a drill.";
     }

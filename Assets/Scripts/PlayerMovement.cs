@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Other")]
     public Transform orientation;
+    public GameObject playerOrientation;
+    public Vector3 tempOrientation;
     [SerializeField] GameObject UI;
     public float rotBefore;
     public LayerMask thisIsDeath;
@@ -223,8 +225,24 @@ public class PlayerMovement : MonoBehaviour
            // Debug.Log(isWalking);
         }
     }
-                                        
-    
+               
+    public void GetOrientation()
+    {
+        float x = playerOrientation.transform.rotation.x;
+        float y = playerOrientation.transform.rotation.y;
+        float z = playerOrientation.transform.rotation.z;
+        tempOrientation= new Vector3(x, y, z);
+    }
+
+    public void SetOrientation()
+    {
+        float x = tempOrientation.x;
+        float y = tempOrientation.y;
+        float z = tempOrientation.z;
+        playerOrientation.transform.rotation = new Quaternion(x, y, z, 0);
+    }
+
+
     // at the moment, these two are not in use: it's clashing with the clamping while the dialogue is playing
     // ... and sadly, i do not have the time for it. still proud about the beginning of my solution tho.
     // ... its not much, but it's still nice to see how my brain is more and more working with it.
@@ -233,7 +251,7 @@ public class PlayerMovement : MonoBehaviour
     //    rotBefore = orientation.localEulerAngles.y; ;
     //    Debug.Log("Orientation was checked. rotBefore = " + rotBefore);
     //}
-    //public void SetOrientation()
+    //public void GetOrientation()
     //{
     //    orientation.Rotate(0, rotBefore, 0);
     //    Debug.Log("Orientation was set. rotBefore = " + rotBefore);

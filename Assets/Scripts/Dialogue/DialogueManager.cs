@@ -76,6 +76,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        Player.GetComponent<PlayerMovement>().GetOrientation();
         //Player.GetComponent<PlayerMovement>().CheckOrientation();
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
@@ -195,7 +196,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueIsPlaying = false;
         dialogueText.text = "";
-        //Player.GetComponent<PlayerMovement>().SetOrientation();
+        Player.GetComponent<PlayerMovement>().SetOrientation();
     }
 
     public void ContinueStory()
